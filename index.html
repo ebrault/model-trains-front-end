@@ -12,6 +12,30 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <header>
+        <h1>Model Train Database</h1>
+        <form id="sign-up-form">
+          <input required name="credentials[email]" type="email" placeholder="Email Address" />
+          <input required name="credentials[password]" type="password" placeholder="Password" />
+          <input required name="credentials[password_confirmation]" type="password" placeholder="Confirm Password" />
+          <input type="submit" />
+        </form>
+        <br />
+        <form id="sign-in-form">
+          <input required name="credentials[email]" type="email" placeholder="Email Address" />
+          <input required name="credentials[password]" type="password" placeholder="Password" />
+          <input type="submit" />
+        </form>
+        <br />
+        <form id="change-password-form" class="hidden">
+          <input required name="passwords[old]" type="password" placeholder="Old Password" />
+          <input required name="passwords[new]" type="password" placeholder="New Password" />
+          <input type="submit" />
+        </form>
+        <br />
+        <button id="sign-out-button" class="hidden">Sign Out</button>
+        <br />
+      </header>
+      <h1 id="display-message" class="hidden"></h1>
     </body>
 </html>
