@@ -7,10 +7,15 @@
 // require('./example')
 
 const userEvents = require('./user/events')
+const locomotiveEvents = require('./locomotive/events')
 
 $(() => {
   $('#sign-up-form').on('submit', userEvents.onSignUp)
   $('#sign-in-form').on('submit', userEvents.onSignIn)
   $('#change-password-form').on('submit', userEvents.onChangePassword)
   $('#sign-out-button').on('click', userEvents.onSignOut)
+  $('#create-locomotive-form').on('submit', locomotiveEvents.onAddLocomotive)
+  $('#update-locomotive-form').on('submit', locomotiveEvents.onUpdateLocomotive)
+  $('#delete-locomotive-form').on('submit', locomotiveEvents.onDeleteLocomotive)
+  $('#locomotives-index-button').on('click', locomotiveEvents.onGetAllLocomotives)
 })

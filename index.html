@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Model Train Database</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -15,6 +15,7 @@
       <header>
         <h1>Model Train Database</h1>
         <form id="sign-up-form">
+          <legend>Sign Up</legend>
           <input required name="credentials[email]" type="email" placeholder="Email Address" />
           <input required name="credentials[password]" type="password" placeholder="Password" />
           <input required name="credentials[password_confirmation]" type="password" placeholder="Confirm Password" />
@@ -22,12 +23,14 @@
         </form>
         <br />
         <form id="sign-in-form">
+          <legend>Sign In</legend>
           <input required name="credentials[email]" type="email" placeholder="Email Address" />
           <input required name="credentials[password]" type="password" placeholder="Password" />
           <input type="submit" />
         </form>
         <br />
         <form id="change-password-form" class="hidden">
+          <legend>Change Password</legend>
           <input required name="passwords[old]" type="password" placeholder="Old Password" />
           <input required name="passwords[new]" type="password" placeholder="New Password" />
           <input type="submit" />
@@ -36,6 +39,35 @@
         <button id="sign-out-button" class="hidden">Sign Out</button>
         <br />
       </header>
+      <div id="create-div" class="hidden">
+        <form id="create-locomotive-form">
+          <legend>Add A Locomotive</legend>
+          <input required name="locomotive[builder]" type="text" placeholder="Builder" />
+          <input required name="locomotive[year]" type="text" placeholder="Year" />
+          <input type="submit" />
+        </form>
+      </div>
+      <div id="update-div" class="hidden">
+        <form id="update-locomotive-form">
+          <legend>Update A Locomotive</legend>
+          <input required name="locomotive[id]" type="text" placeholder="ID" />
+          <input required name="locomotive[builder]" type="text" placeholder="Builder" />
+          <input required name="locomotive[year]" type="text" placeholder="Year" />
+          <input type="submit" />
+        </form>
+      </div>
+      <div id="read-div" class="hidden">
+        <button id="locomotives-index-button">Get All Locomotives</button>
+      </div>
+      <div id="delete-div" class="hidden">
+        <form id="delete-locomotive-form">
+          <legend>Delete A Locomotive</legend>
+          <input required name="locomotive[id]" type="text" placeholder="ID" />
+          <input type="submit" />
+        </form>
+      </div>
       <h1 id="display-message" class="hidden"></h1>
+      <h1 id="trains-empty-message" class="hidden">Your collection is empty! Please add a train</h1>
+      <h1 id="display-trains" class="hidden"></h1>
     </body>
 </html>
