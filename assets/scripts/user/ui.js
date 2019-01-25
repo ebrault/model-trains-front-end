@@ -23,9 +23,9 @@ const signInSuccess = function (response) {
   $('#display-message').css('color', 'green')
   $('#sign-in-form').trigger('reset')
   store.user = response.user
-  $('#sign-in-form').addClass('hidden')
-  $('#sign-up-form').addClass('hidden')
-  $('#change-password-form').removeClass('hidden')
+  $('#sign-in-dropdown').addClass('hidden')
+  $('#sign-up-dropdown').addClass('hidden')
+  $('#change-password-dropdown').removeClass('hidden')
   $('#sign-out-button').removeClass('hidden')
   $('#create-div').removeClass('hidden')
   $('#read-div').removeClass('hidden')
@@ -67,13 +67,13 @@ const signOutSuccess = function () {
   $('#display-message').html('Sign out successful')
   $('#display-message').css('color', 'green')
   $('#sign-out-button').addClass('hidden')
-  $('#change-password-form').addClass('hidden')
+  $('#change-password-dropdown').addClass('hidden')
   $('#create-div').addClass('hidden')
   $('#read-div').addClass('hidden')
   $('#update-div').addClass('hidden')
   $('#delete-div').addClass('hidden')
-  $('#sign-up-form').removeClass('hidden')
-  $('#sign-in-form').removeClass('hidden')
+  $('#sign-up-dropdown').removeClass('hidden')
+  $('#sign-in-dropdown').removeClass('hidden')
 }
 
 const signOutFailure = function () {
