@@ -19,6 +19,11 @@ const onGetAllLocomotives = function (event) {
     .catch(ui.getAllLocomotivesFailure)
 }
 
+const onClearLocomotives = function (event) {
+  event.preventDefault()
+  ui.clearLocomotives()
+}
+
 const onUpdateLocomotive = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -39,5 +44,6 @@ module.exports = {
   onAddLocomotive,
   onGetAllLocomotives,
   onUpdateLocomotive,
-  onDeleteLocomotive
+  onDeleteLocomotive,
+  onClearLocomotives
 }

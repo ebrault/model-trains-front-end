@@ -1,5 +1,7 @@
 'use strict'
 
+const indexLocomotivesTemplate = require('../templates/locomotives-listing.handlebars')
+
 const addLocomotiveSuccess = function (data) {
   $('#display-trains').html('')
   $('#trains-empty-message').addClass('hidden')
@@ -34,20 +36,32 @@ const getAllLocomotivesSuccess = function (data) {
     $('#display-message').html('')
     $('#trains-empty-message').removeClass('hidden')
   } else {
-    $('#display-message').html('')
-    $('#display-trains').html('')
-    data.locomotives.forEach(function (locomotive) {
-      const locomotiveHtml = (`
-        <p>Builder: ${locomotive.builder}</p>
-        <p>Year: ${locomotive.year}</p>
-        <h4>ID: ${locomotive.id}</h4>
-        </ br>
-      `)
-      $('#display-trains').append(locomotiveHtml)
-      $('#display-trains').css('color', 'green')
-    })
+    const indexLocomotivesHtml = indexLocomotivesTemplate({ locomotives: data.locomotives })
+    $('#display-trains').removeClass('hidden')
+    $('#display-trains').html(indexLocomotivesHtml)
+    $('#display-trains').css('color', 'green')
   }
 }
+
+// const getAllLocomotivesSuccess = function (data) {
+//   if (data.locomotives.length === 0) {
+//     $('#display-message').html('')
+//     $('#trains-empty-message').removeClass('hidden')
+//   } else {
+//     $('#display-message').html('')
+//     $('#display-trains').html('')
+//     data.locomotives.forEach(function (locomotive) {
+//       const locomotiveHtml = (`
+//         <p>Builder: ${locomotive.builder}</p>
+//         <p>Year: ${locomotive.year}</p>
+//         <h4>ID: ${locomotive.id}</h4>
+//         </ br>
+//       `)
+//       $('#display-trains').append(locomotiveHtml)
+//       $('#display-trains').css('color', 'green')
+//     })
+//   }
+// }
 
 const getAllLocomotivesFailure = function () {
   $('#display-trains').html('')
@@ -98,6 +112,10 @@ const deleteLocomotiveFailure = function () {
   $('#delete-locomotive-form').trigger('reset')
 }
 
+const clearLocomotives = function () {
+  ('#display-trains').empty('')
+}
+
 module.exports = {
   addLocomotiveSuccess,
   addLocomotiveFailure,
@@ -106,5 +124,6 @@ module.exports = {
   updateLocomotiveSuccess,
   updateLocomotiveFailure,
   deleteLocomotiveSuccess,
-  deleteLocomotiveFailure
+  deleteLocomotiveFailure,
+  clearLocomotives
 }

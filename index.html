@@ -63,9 +63,11 @@
           <button id="sign-out-button" class="btn btn-success hidden">Sign Out</button>
         </div>
       </nav>
+      <hr />
       <div id="locomotive-div" class="hidden">
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createModal" data-whatever="create">Add A Locomotive</button>
-        <button type="button" class="btn btn-primary">Get All Locomotives</button>
+        <button type="button" class="btn btn-primary" id="locomotives-index-button">Get All Locomotives</button>
+        <button type="button" class="btn btn-primary" id="clear-locomotives-button">Clear Locomotives</button>
       </div>
       <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -79,22 +81,35 @@
             <div class="modal-body">
               <form id="create-locomotive-form">
                 <input required name="locomotive[builder]" type="text" placeholder="Builder" />
+                <br />
                 <input required name="locomotive[year]" type="text" placeholder="Year" />
+                <br />
                 <input type="submit" />
               </form>
             </div>
           </div>
         </div>
       </div>
-      <!--<div id="create-div" class="hidden">
-        <form id="create-locomotive-form">
-          <legend>Add A Locomotive</legend>
-          <input required name="locomotive[builder]" type="text" placeholder="Builder" />
-          <input required name="locomotive[year]" type="text" placeholder="Year" />
-          <input type="submit" />
-        </form>
-      </div>-->
-      <div id="update-div" class="hidden">
+      <div class="modal fade" id="updatemodal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+            </div>
+            <div class="modal-body">
+              <form id="update-modal-form">
+                <input required name="locomotive[id]" type="text" placeholder="ID" />
+                <br />
+                <input required name="locomotive[builder]" type="text" placeholder="Builder" />
+                <br />
+                <input required name="locomotive[year]" type="text" placeholder="Year" />
+                <br />
+                <input type="submit" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div id="update-div" class="hidden">
         <form id="update-locomotive-form">
           <legend>Update A Locomotive</legend>
           <input required name="locomotive[id]" type="text" placeholder="ID" />
@@ -103,18 +118,17 @@
           <input type="submit" />
         </form>
       </div>
-      <div id="read-div" class="hidden">
-        <button id="locomotives-index-button">Get All Locomotives</button>
-      </div>
       <div id="delete-div" class="hidden">
         <form id="delete-locomotive-form">
           <legend>Delete A Locomotive</legend>
           <input required name="locomotive[id]" type="text" placeholder="ID" />
           <input type="submit" />
         </form>
-      </div>
+      </div> -->
       <h1 id="display-message" class="hidden"></h1>
       <h1 id="trains-empty-message" class="hidden">Your collection is empty! Please add a train</h1>
-      <h1 id="display-trains" class="hidden"></h1>
+      <main>
+        <div id="display-trains" class="display-trains hidden"></div>
+      </main>
     </body>
 </html>

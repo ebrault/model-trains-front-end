@@ -18,4 +18,5 @@ $(() => {
   $('#update-locomotive-form').on('submit', locomotiveEvents.onUpdateLocomotive)
   $('#delete-locomotive-form').on('submit', locomotiveEvents.onDeleteLocomotive)
   $('#locomotives-index-button').on('click', locomotiveEvents.onGetAllLocomotives)
+  $('#clear-locomotives-button').on('click', locomotiveEvents.onClearLocomotives)
 })

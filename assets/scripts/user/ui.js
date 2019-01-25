@@ -28,7 +28,6 @@ const signInSuccess = function (response) {
   $('#change-password-dropdown').removeClass('hidden')
   $('#sign-out-button').removeClass('hidden')
   $('#locomotive-div').removeClass('hidden')
-  $('#read-div').removeClass('hidden')
   $('#update-div').removeClass('hidden')
   $('#delete-div').removeClass('hidden')
 }
@@ -69,7 +68,6 @@ const signOutSuccess = function () {
   $('#sign-out-button').addClass('hidden')
   $('#change-password-dropdown').addClass('hidden')
   $('#locomotive-div').addClass('hidden')
-  $('#read-div').addClass('hidden')
   $('#update-div').addClass('hidden')
   $('#delete-div').addClass('hidden')
   $('#sign-up-dropdown').removeClass('hidden')

@@ -1,0 +1,18 @@
+{{#each locomotive as |locomotive|}}
+  {{log locomotive}}
+  <!--{{> partial}}
+  Don't uncomment yet -->
+  <div>
+    <h1 data-id="{{locomotive.id}}"><small>Builder: {{limit locomotive.builder 10}}</small>
+      <section data-id="{{locomotive.id}}">
+        <p>{{#if locomotive.year}}
+          {{locomotive.year}}
+          {{else}}
+          No year provided.
+        {{/if}}</p>
+        <button type="btn btn-primary" data-toggle="modal" data-target="#updateModal" data-whatever="update">Update locomotive</button>
+        <button type="btn btn-primary" id="delete-locomotive-button">Remove locomotive</button>
+      </section>
+    </h1>
+  </div>
+{{/each}}

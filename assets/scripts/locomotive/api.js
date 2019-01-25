@@ -37,15 +37,13 @@ const updateLocomotive = function (data) {
   })
 }
 
-const deleteLocomotive = function (data) {
-  const locomotiveId = data.locomotive.id
+const deleteLocomotive = function (locomotiveId) {
   return $.ajax({
     url: config.apiUrl + `/locomotives/${locomotiveId}`,
     headers: {
       Authorization: `Token token=${store.user.token}`
     },
-    method: 'DELETE',
-    data: data
+    method: 'DELETE'
   })
 }
 
